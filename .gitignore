@@ -1,0 +1,10 @@
+/Frontend/node_modules/
+Frontend/node_modules
+Frontend/.pnp
+Frontend/.pnp.js
+
+# testing
+Frontend/coverage
+
+# production
+Frontend/build
