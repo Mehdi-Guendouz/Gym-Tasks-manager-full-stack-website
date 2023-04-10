@@ -2,10 +2,12 @@ import React, {useEffect , useState} from 'react'
 import WorkoutDetails from '../components/WorkoutDetails.js'
 import WorkoutForm from '../components/WorkoutForm.js'
 import { useWorkoutContext } from '../hooks/useWorkoutsContext'
+import { UseAuthContexte } from '../hooks/UseAuthContexte.js'
 
 export default function Home() {
     // const [workouts, setWorkouts] = useState(null)
     const {state, dispatch} = useWorkoutContext()
+    const { user } = UseAuthContexte()
     useEffect(() => {
         const fetchWorkout = async () => {
             const response = await fetch('/api/workouts')
@@ -16,7 +18,7 @@ export default function Home() {
             }
         }
         fetchWorkout()
-    }, [])
+    }, [dispatch, user])
 
   return (
     <div className='home'>
